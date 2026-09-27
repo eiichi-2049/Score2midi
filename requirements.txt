@@ -1,0 +1,17 @@
+# Score2MIDI 运行依赖（引擎 homr 另见 README）
+# 安装到 homr_gui/.venv
+# pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
+# 核心（与 homr_gui/requirements.txt 对齐时可改用那份）
+onnxruntime>=1.24
+opencv-python>=4.13
+opencv-python-headless>=4.13
+numpy>=2.0
+Pillow>=12
+music21>=9.9
+musicxml>=1.4
+rapidocr>=3.7
+shapely>=2
+pyclipper>=1.4
+requests>=2.32
+pyyaml>=6

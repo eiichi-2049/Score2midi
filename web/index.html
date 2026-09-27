@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>乐谱转 MIDI · 可携带版</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <h1>Score<span>→</span>MIDI</h1>
+        <p>乐谱图片 · 一键转 MIDI</p>
+      </div>
+      <div class="header-actions">
+        <span id="modelBadge" class="badge">模型检测中…</span>
+        <button id="btnModels" class="btn ghost" type="button">下载/检查模型</button>
+        <button id="btnCli" class="btn ghost" type="button">命令行</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card drop-card" id="dropZone">
+        <div class="drop-inner">
+          <div class="drop-icon" aria-hidden="true">♪</div>
+          <h2>拖入乐谱图片</h2>
+          <p class="muted">支持 PNG / JPG / BMP / WebP · 可多选 · 也可点击选择</p>
+          <div class="drop-actions">
+            <button id="btnPick" class="btn primary" type="button">选择图片</button>
+            <label class="btn ghost file-label">
+              选择本地文件夹图片
+              <input id="fileInput" type="file" accept="image/*" multiple hidden />
+            </label>
+          </div>
+          <p class="hint">打印体五线谱效果最好 · 简谱/手写不支持</p>
+        </div>
+        <input id="folderInput" type="file" accept="image/*" multiple hidden />
+      </section>
+
+      <section class="card queue-card">
+        <div class="card-head">
+          <h2>转换队列</h2>
+          <div class="row">
+            <button id="btnClear" class="btn ghost sm" type="button">清空已完成</button>
+          </div>
+        </div>
+        <ul id="jobList" class="job-list">
+          <li class="empty">还没有任务。拖入图片开始。</li>
+        </ul>
+      </section>
+
+      <section class="card tips-card">
+        <h2>输出与技巧</h2>
+        <ul class="tips">
+          <li>结果写入 <code>输出\</code>：<b>.mid</b> 进 DAW，<b>.musicxml</b> 用 MuseScore 校对</li>
+          <li>拍照请正对、清晰、无阴影；先试 1–2 行再上整页</li>
+          <li>AI 会有误差，务必对照原谱改错音</li>
+        </ul>
+        <div class="path-box">
+          <div><span class="label">服务根目录</span><code id="rootPath">…</code></div>
+          <div><span class="label">等价命令行</span><code id="cliHint">python img2midi.py 图片.png --out-dir 输出</code></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>本地运行 · 数据不出电脑</span>
+      <span>基于 HOMR · AGPL-3.0</span>
+    </footer>
+  </div>
+
+  <dialog id="cliDialog">
+    <form method="dialog" class="dialog-body">
+      <h3>命令行用法（可复制）</h3>
+      <p class="muted">同一套能力，适合批量脚本。</p>
+      <pre id="cliText"></pre>
+      <div class="row end">
+        <button class="btn ghost" value="copy" id="btnCopyCli" type="submit">复制</button>
+        <button class="btn primary" value="close" type="submit">关闭</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="modelDialog">
+    <form method="dialog" class="dialog-body">
+      <h3>AI 模型状态</h3>
+      <ul id="modelList" class="model-list"></ul>
+      <p class="muted">模型放在 <code>homr_gui/homr/…</code>，已预下载则无需再等。</p>
+      <div class="row end">
+        <button class="btn primary" value="close" type="submit">知道了</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

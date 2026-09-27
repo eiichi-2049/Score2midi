@@ -1,0 +1,46 @@
+# 运行时 / 本地产物（不入库）
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# AI 模型与权重（体积大，用 download_models.py 拉取）
+*.onnx
+*.pth
+*.pt
+*.ckpt
+*.zip
+homr_gui/homr/segmentation/*.onnx
+homr_gui/homr/transformer/*.onnx
+homr_gui/.venv/
+
+# 第三方引擎整树（用 git submodule 或 README 指引克隆，勿把 fork 全量塞进本仓）
+homr_gui/
+
+# 用户数据
+上传/
+输出/
+MIDI输出/
+乐谱图片/
+*.mid
+*.musicxml
+*.log
+
+# 版权谱例 / 截图（勿公开分发）
+examples/
+*.png
+*.jpg
+*.jpeg
+*.webp
+!docs/assets/*.png
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.part
