@@ -1,0 +1,41 @@
+Score2MIDI wrapper toolkit
+Copyright (C) 2026 Eiichi-2049
+
+SPDX-License-Identifier: AGPL-3.0-only
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, version 3 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/agpl-3.0.html>.
+
+Full license text: https://www.gnu.org/licenses/agpl-3.0.txt
+
+-------------------------------------------------------------------------------
+IMPORTANT — third-party components (see THIRD_PARTY.md)
+
+This repository is a local wrapper around HOMR / HOMR GUI and other projects.
+It does NOT include their source code or model weights.
+
+- HOMR (https://github.com/liebharc/homr) — AGPL-3.0 — © Christian Liebhardt et al.
+- HOMR GUI (https://github.com/Quackone/homr_gui) — AGPL-3.0
+- oemer lineage mentioned in docs — MIT — © BreezeWhite et al.
+
+If you distribute this software, or offer it as a network service, you must:
+
+1. Keep this project's source available under AGPL-3.0 (including any
+   modifications you make to files in this repository).
+2. Comply with the licenses of HOMR and every dependency you ship or run
+   with it (especially AGPL-3.0 for HOMR).
+3. Give clear attribution to the upstream projects (see THIRD_PARTY.md).
+4. NOT claim ownership of HOMR, its models, or its outputs as your own work.
+5. NOT redistribute copyrighted sheet-music scans in this repository.
+
+When in doubt, read AGPL-3.0 §5 (Conveying Modified Source Versions) and
+§13 (Remote Network Interaction; Use with the GNU AGPL).

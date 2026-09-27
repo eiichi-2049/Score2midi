@@ -2,7 +2,7 @@
 
 把**印刷体五线谱图片**识别成 **MusicXML + MIDI**，并自动标注谱面左侧的乐器名（GM 音色）。
 
-> 状态：私有验证中。HOMR 引擎识别多声部总谱仍有上限，结果请对照原谱校对。
+> 状态：可公开预览 / 持续改进。HOMR 引擎识别多声部总谱仍有上限，结果请对照原谱校对。
 
 ## 功能
 
@@ -112,5 +112,8 @@ flowchart LR
 
 ## 许可
 
-- 本仓库封装代码：建议 MIT（可按需修改 `LICENSE`）
-- **HOMR / HOMR GUI 为 AGPL-3.0**，若分发衍生程序请遵守其条款，详见 [THIRD_PARTY.md](THIRD_PARTY.md)
+- **本仓库代码：AGPL-3.0-only**（见 [LICENSE](LICENSE)）
+- **HOMR / HOMR GUI：AGPL-3.0**，版权归其作者；本仓不含其源码
+- 分发、提供网络服务或二次开发前请阅读 [THIRD_PARTY.md](THIRD_PARTY.md) 与 AGPL 条款
+
+致谢：Christian Liebhardt（HOMR）、Quackone（HOMR GUI）、BreezeWhite（oemer）及各依赖作者。
